@@ -8,12 +8,11 @@
 </template>
 
 <script>
-import { BABYLON, Scene } from "vue-babylonjs";
+import * as BABYLON from "babylonjs";
 import * as GUI from "babylonjs-gui";
 
 export default {
   /* eslint-disable */
-  components: { BABYLON, Scene },
   name: "SecondBabylon",
   data: () => ({
     gui3DManager: null,
