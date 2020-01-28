@@ -9,6 +9,7 @@
 
 <script>
 import { BABYLON, Scene } from "vue-babylonjs";
+import * as GUI from "babylonjs-gui";
 
 export default {
   /* eslint-disable */
@@ -26,7 +27,7 @@ export default {
       console.log(scene);
       this.testBox = BABYLON.Mesh.CreateBox("b1", 1.0, scene);
       this.testBox.name = "test1";
-      this.testButton = BABYLON.GUI.MeshButton3D(this.testBox, "name");
+      this.testButton = GUI.MeshButton3D(this.testBox, "name");
     },
     onScene(scene) {
       this.vrHelper = scene.createDefaultVRExperience({
