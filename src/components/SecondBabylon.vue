@@ -26,8 +26,9 @@ export default {
       console.log("Camera:", camera);
     },
     testMethod(scene) {
-      console.log(scene);
+      console.log("Scene:", scene);
       this.testBox = new BABYLON.Mesh.CreateBox("b1", 1.0, scene);
+      console.log("TestBox:", this.testBox);
       this.testBox.name = "test1";
 
       // add a 3d button
@@ -41,8 +42,7 @@ export default {
       this.vrHelper = scene.createDefaultVRExperience({
         createDeviceOrientationCamera: false
       });
-      /* eslint-disable */
-      console.log(this.vrHelper);
+      console.log("VR Helper:", this.vrHelper);
 
       // create anchorMesh : https://www.babylonjs-playground.com/#2YZFA0#2
       this.anchorMesh = new BABYLON.AbstractMesh("anchorMesh", scene); // new BABYLON.TransformNode("");
