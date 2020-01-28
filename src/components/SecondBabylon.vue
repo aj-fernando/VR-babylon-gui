@@ -12,7 +12,6 @@ import * as BABYLON from "babylonjs";
 import * as GUI from "babylonjs-gui";
 
 export default {
-  /* eslint-disable */
   name: "SecondBabylon",
   data: () => ({
     gui3DManager: null,
@@ -23,7 +22,9 @@ export default {
   }),
   mounted() {},
   methods: {
-    onCamera(camera) {},
+    onCamera(camera) {
+      console.log("Camera:", camera);
+    },
     testMethod(scene) {
       console.log(scene);
       this.testBox = new BABYLON.Mesh.CreateBox("b1", 1.0, scene);
