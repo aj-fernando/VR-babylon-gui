@@ -27,9 +27,15 @@ export default {
     onCamera(camera) {},
     testMethod(scene) {
       console.log(scene);
-      this.testBox = BABYLON.Mesh.CreateBox("b1", 1.0, scene);
+      this.testBox = new BABYLON.Mesh.CreateBox("b1", 1.0, scene);
       this.testBox.name = "test1";
-      this.testButton = GUI.MeshButton3D(this.testBox, "name");
+
+      // add a 3d button
+      this.testButton = new GUI.MeshButton3D(this.testBox, "name");
+      // Now you can start adding controls to the GUI manager rootContainer
+      this.gui3DManager.addControl(this.testButton);
+      //  attach a control to a mesh or tranform node from your scene
+      this.testButton.linkToTransformNode(this.anchorMesh);
     },
     onScene(scene) {
       this.vrHelper = scene.createDefaultVRExperience({
